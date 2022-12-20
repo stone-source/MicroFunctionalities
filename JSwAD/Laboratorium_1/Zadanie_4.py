@@ -3,6 +3,7 @@
    wyliczyć i podać sumę wszystkich liczb całkowitych pomiędzy podanymi liczbami.
 """
 
+
 class CCalc:
     def __init__(self, p_l1, p_l2):
         self._l1 = min(p_l1, p_l2)
@@ -21,17 +22,15 @@ class CCalc:
         print("\nLiczba wykonanych kroków: " + str(iii))
         print("Suma liczb z zakresu od: >= " + str(self._l1) + " do: <= " + str(self._l2) + " wynosi = " + str(val))
 
+
 def wprowadzliczbe():
     while True:
         podanaliczba = input("Podaj liczbę całkowitą:")
         try:
-            val = int(podanaliczba)
-            if val < 0:
-                print("Podana liczba nie może być mniejsza od 0")
-            else:
-                return val
+            return int(podanaliczba)
         except ValueError:
             print("Podana liczba jest nieprawidłowa")
+
 
 if __name__ == '__main__':
     a = wprowadzliczbe()
