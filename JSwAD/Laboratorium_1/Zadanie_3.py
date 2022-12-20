@@ -1,25 +1,35 @@
-#3. Napisz skrypt do obliczania pierwiastków równania kwadratowego: ax^2+bx+c = 0
+
+"""
+3. Napisz skrypt do obliczania pierwiastków równania kwadratowego: ax^2+bx+c = 0
+"""
+
 
 import math
+
 
 class CRownianieKwadratowe:
     def __wyliczdelte(self):
         # delta = b^2 - 4ac
         return pow(self._B, 2) - (4 * self._A * self._C)
+
     def __wyliczx1(self):
         # x1 = -b-sqrt(delta)/2a
         return (-self._B-math.sqrt(self._Delta))/(2*self._A)
+
     def __wyliczx2(self):
         # x2 = -b+sqrt(delta)/2a
         return (-self._B+math.sqrt(self._Delta))/(2*self._A)
+
     def __wyliczx0(self):
         # x0 = -b/2a
         return -self._B/(2*self._A)
+
     def __init__(self, p_a, p_b, p_c):
         self._A = p_a
         self._B = p_b
         self._C = p_c
         self._Delta = self.__wyliczdelte()
+
     def wylicz(self):
         delta = self.__wyliczdelte()
         if delta < 0:
@@ -28,6 +38,7 @@ class CRownianieKwadratowe:
             print("Rozwiązaniem równania jest liczba: x = " + str(self.__wyliczx0()))
         else:
             print("Rozwiązaniami równania są liczby: x = " + str(self.__wyliczx1()) + " oraz x = " + str(self.__wyliczx2()))
+
 
 def wprowadzliczbe(p_parametr, p_czyzero):
     while True:
@@ -40,6 +51,7 @@ def wprowadzliczbe(p_parametr, p_czyzero):
                 return val
         except ValueError:
             print("Podana liczba jest nieprawidłowa")
+
 
 if __name__ == '__main__':
     print("y = a^2 + bx + c = 0")
